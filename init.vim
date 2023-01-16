@@ -1,5 +1,4 @@
 lua require('plugins')
-source "plugin/java_getset.vim"
 
 set termguicolors
 colorscheme palenight
