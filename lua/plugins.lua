@@ -47,6 +47,7 @@ return require("packer").startup(function(use)
 		-- Syntax
 		use "ntpeters/vim-better-whitespace"
 		use(require "_nvim-treesitter")
+		use(require "_nvim-treesitter-refactor")
 
 		-- Workflow
 		use "preservim/tagbar"
