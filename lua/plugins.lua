@@ -56,6 +56,7 @@ return require("packer").startup(function(use)
 		use "jinh0/eyeliner.nvim"
 		use "tpope/vim-surround"
 		use "Shatur/neovim-session-manager"
+		use "vim-scripts/java_getset.vim"
 		use(require "_hover_nvim")
 		use(require "_fzf")
 		use(require "_coc_nvim")
