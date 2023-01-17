@@ -40,7 +40,8 @@ return require("packer").startup(function(use)
 		-- Style
 		use(require "_lualine_nvim")
 		use(require "_vim-rainbow")
-		use(require "_barbar_nvim")
+		use(require "_tabline_nvim")
+		-- use(require "_barbar_nvim")
 
 
 

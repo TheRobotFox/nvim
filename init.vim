@@ -16,6 +16,10 @@ syntax on
 set number
 set ruler
 
+" default tabwidth
+set tabstop=4
+set shiftwidth=4
+
 " Mute bell
 set visualbell
 
