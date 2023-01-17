@@ -29,7 +29,7 @@ return {
     map('n', '<A-,>', '<Cmd>TablineBufferPrevious<CR>', opts)
     map('n', '<A-.>', '<Cmd>TablineBufferNext<CR>', opts)
 
-    map('n', '<A-:>', '<Cmd>tabNext<CR>', opts)
+    map('n', '<A-:>', '<Cmd>tabnext<CR>', opts)
     map('n', '<A-;>', '<Cmd>tabprevious<CR>', opts)
 
     map('n', '<A->>', '<Cmd>tabmove +<CR>', opts)
