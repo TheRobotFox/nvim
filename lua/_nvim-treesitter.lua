@@ -2,19 +2,20 @@ return {
 	"nvim-treesitter/nvim-treesitter",
 	run = function()
 			local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
-			ts_update()
-			-- vim.api.nvim_create_autocmd({"BufEnter","BufAdd","BufNew","BufNewFile","BufWinEnter"}, {
-			-- group = vim.api.nvim_create_augroup("TS_FOLD_WORKAROUND", {}),
-			-- callback = function()
-			-- 							vim.opt.foldmethod     = "expr"
-			-- 							vim.opt.foldexpr       = "nvim_treesitter#foldexpr()"
-			-- 						end
-			-- })
+			vim.api.nvim_create_autocmd({"BufEnter","BufAdd","BufNew","BufNewFile","BufWinEnter"}, {
+			group = vim.api.nvim_create_augroup("TS_FOLD_WORKAROUND", {}),
+			callback = function()
+				vim.opt.foldmethod     = "expr"
+				vim.opt.foldexpr       = "nvim_treesitter#foldexpr()"
+				end
+			})
 	end,
 	config = function()
 		require'nvim-treesitter.configs'.setup {
 			-- A list of parser names, or "all" (the four listed parsers should always be installed)
-			ensure_installed = { "c", "lua", "vim", "help", "json", "cpp", "java", "python", "rust", "bash", "arduino", "css", "gitignore", "html", "javascript", "make", "markdown", "yaml", "toml" },
+			ensure_installed = { "c", "cpp", "java", "rust", "json", "vim", 
+					     --"help", "bash", "arduino", "css", "gitignore", "html", "javascript", "make", "markdown", "yaml", "toml", "python", "lua" -- known to crash windows
+		},
 
 			-- Automatically install missing parsers when entering buffer
 			-- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
@@ -33,13 +34,13 @@ return {
 				-- list of language that will be disabled
 				-- disable = { "c", "rust" },
 				-- Or use a function for more flexibility, e.g. to disable slow treesitter highlight for large files
-				-- disable = function(lang, buf)
-				-- 		local max_filesize = 1000 * 1024 -- 1 MB
-				-- 		local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
-				-- 		if ok and stats and stats.size > max_filesize then
-				-- 				return true
-				-- 		end
-				-- end,
+				disable = function(lang, buf)
+						local max_filesize = 100 * 1024
+						local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+						if ok and stats and stats.size > max_filesize then
+								return true
+						end
+				end,
 
 				-- Setting this to true will run `:h syntax` and tree-sitter at the same time.
 				-- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
