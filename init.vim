@@ -9,6 +9,10 @@ imap <c-c> <esc>
 vmap <c-c> <esc>
 omap <c-c> <esc>
 
+"Terminalmode
+
+tmap <C-Q> <C-\><C-N>
+
 " Syntax highlighting
 syntax on
 

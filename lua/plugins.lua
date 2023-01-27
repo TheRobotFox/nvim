@@ -31,7 +31,7 @@ return require("packer").startup(function(use)
 		-- Startup
 		use "wbthomason/packer.nvim"
 		use "lewis6991/impatient.nvim"
-		-- use(require "_alpha-nvim")
+		use(require "_alpha-nvim")
 
 		-- Themes
 		use "drewtempelmeyer/palenight.vim"
@@ -47,8 +47,11 @@ return require("packer").startup(function(use)
 
 		-- Syntax
 		use "ntpeters/vim-better-whitespace"
-		use(require "_nvim-treesitter")
-		use(require "_nvim-treesitter-refactor")
+		-- If OS good:
+		-- use(require "_nvim-treesitter")
+		-- use(require "_nvim-treesitter-refactor")
+		-- else (Windows) (cause it sucks)
+		use "sheerun/vim-polyglot"
 
 		-- Workflow
 		use "preservim/tagbar"
@@ -57,7 +60,7 @@ return require("packer").startup(function(use)
 		use "tpope/vim-sleuth"
 		use "jinh0/eyeliner.nvim"
 		use "tpope/vim-surround"
-		use "Shatur/neovim-session-manager"
+		use(require "_neovim-session-manager")
 		use(require "_hover_nvim")
 		use(require "_fzf")
 		use(require "_coc_nvim")
