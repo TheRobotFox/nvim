@@ -48,10 +48,10 @@ return require("packer").startup(function(use)
 		-- Syntax
 		use "ntpeters/vim-better-whitespace"
 		-- If OS good:
-		-- use(require "_nvim-treesitter")
-		-- use(require "_nvim-treesitter-refactor")
+		use(require "_nvim-treesitter")
+		use(require "_nvim-treesitter-refactor")
 		-- else (Windows) (cause it sucks)
-		use "sheerun/vim-polyglot"
+		-- use "sheerun/vim-polyglot"
 
 		-- Workflow
 		use "preservim/tagbar"
