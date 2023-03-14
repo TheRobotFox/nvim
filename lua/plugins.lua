@@ -48,10 +48,10 @@ return require("packer").startup(function(use)
 		-- Syntax
 		use "ntpeters/vim-better-whitespace"
 		-- If OS good:
-		use(require "_nvim-treesitter")
-		use(require "_nvim-treesitter-refactor")
+		-- use(require "_nvim-treesitter")
+		-- use(require "_nvim-treesitter-refactor")
 		-- else (Windows) (cause it sucks)
-		-- use "sheerun/vim-polyglot"
+		use "sheerun/vim-polyglot"
 
 		-- Workflow
 		use "preservim/tagbar"
@@ -60,11 +60,15 @@ return require("packer").startup(function(use)
 		use "tpope/vim-sleuth"
 		use "jinh0/eyeliner.nvim"
 		use "tpope/vim-surround"
+		use "tpope/vim-commentary"
+		use "tpope/vim-repeat"
+		-- use(require "_tabnine-nvim")
 		use(require "_neovim-session-manager")
 		use(require "_hover_nvim")
 		use(require "_fzf")
 		use(require "_coc_nvim")
 		use(require "_nvim-tree")
+		use(require "_trouble_nvim")
 
 		-- Dependencies
 		use "nvim-tree/nvim-web-devicons"

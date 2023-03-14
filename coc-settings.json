@@ -3,4 +3,10 @@
   "java.referencesCodeLens.enabled": true,
   "java.implementationsCodeLens.enabled": true,
   "suggest.noselect": true,
+  "clangd.fallbackFlags": [
+    "-std=c++2b"
+  ],
+  "clangd.arguments": [
+    "--query-driver=C:\\msys64\\mingw64\\bin\\*"
+  ]
 }

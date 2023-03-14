@@ -28,15 +28,13 @@ return {
     local opts = { noremap = false, silent = true }
     map('n', '<A-h>', '<Cmd>TablineBufferPrevious<CR>', opts)
     map('n', '<A-l>', '<Cmd>TablineBufferNext<CR>', opts)
-
     map('n', '<A-k>', '<Cmd>tabnext<CR>', opts)
     map('n', '<A-j>', '<Cmd>tabprevious<CR>', opts)
 
-    map('n', '<A-,>', '<Cmd>TablineBufferPrevious<CR>', opts)
-    map('n', '<A-.>', '<Cmd>TablineBufferNext<CR>', opts)
-
-    map('n', '<A-:>', '<Cmd>tabnext<CR>', opts)
-    map('n', '<A-;>', '<Cmd>tabprevious<CR>', opts)
+    map('n', '<A-:>', '<Cmd>TablineBufferNext<CR>', opts)
+    map('n', '<A-;>', '<Cmd>TablineBufferPrevious<CR>', opts)
+    map('n', '<A-.>', '<Cmd>tabnext<CR>', opts)
+    map('n', '<A-,>', '<Cmd>tabprevious<CR>', opts)
 
     map('n', '<A->>', '<Cmd>tabmove +<CR>', opts)
     map('n', '<A-<>', '<Cmd>tabmove -<CR>', opts)

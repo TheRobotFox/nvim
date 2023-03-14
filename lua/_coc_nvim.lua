@@ -40,11 +40,6 @@ return {
 					-- Use <c-space> to trigger completion
 					keyset("i", "<c-space>", "coc#refresh()", {silent = true, expr = true})
 
-					-- Use `[g` and `]g` to navigate diagnostics
-					-- Use `:CocDiagnostics` to get all diagnostics of current buffer in location list
-					keyset("n", "<a-u>", "<Plug>(coc-diagnostic-prev)", {silent = true})
-					keyset("n", "<a-d>", "<Plug>(coc-diagnostic-next)", {silent = true})
-
 					-- GoTo code navigation
 					keyset("n", "gd", "<Plug>(coc-definition)", {silent = true})
 					keyset("n", "gy", "<Plug>(coc-type-definition)", {silent = true})
@@ -171,26 +166,18 @@ return {
 
 					-- Mappings for CoCList
 					-- code actions and coc stuff
-					---@diagnostic disable-next-line: redefined-local
-					local opts = {silent = true, nowait = true}
-					-- Show all diagnostics
-					keyset("n", "<space>a", ":<C-u>CocList diagnostics<cr>", opts)
-					-- Manage extensions
-					keyset("n", "<space>e", ":<C-u>CocList extensions<cr>", opts)
-					-- Show commands
-					keyset("n", "<space>c", ":<C-u>CocList commands<cr>", opts)
-					-- Find symbol of current document
-					keyset("n", "<space>o", ":<C-u>CocList outline<cr>", opts)
-					-- Search workspace symbols
-					keyset("n", "<space>s", ":<C-u>CocList -I symbols<cr>", opts)
-					-- Do default action for next item
-					keyset("n", "<space>j", ":<C-u>CocNext<cr>", opts)
-					-- Do default action for previous item
-					keyset("n", "<space>k", ":<C-u>CocPrev<cr>", opts)
-					-- Resume latest coc list
-					keyset("n", "<space>p", ":<C-u>CocListResume<cr>", opts)
 
-					vim.g.coc_global_extensions = { "coc-json", "coc-git", "coc-clangd", "coc-html", "coc-calc", "coc-css", "coc-java", "coc-pyright", "coc-rust-analyzer", "coc-sh", "coc-tsserver", "coc-toml", "coc-xml", "coc-lua" }
+					-- Use `[g` and `]g` to navigate diagnostics
+					-- Use `:CocDiagnostics` to get all diagnostics of current buffer in location list
+					keyset("n", "<a-u>", "<Plug>(coc-diagnostic-prev)", {silent = true})
+					keyset("n", "<a-d>", "<Plug>(coc-diagnostic-next)", {silent = true})
+					keyset("n", "<a-a>", ":CocList diagnostics<cr>", {silent = true})
+					keyset("n", "<a-o>", ":CocList outline<cr>", {silent = true})
+					keyset("n", "<a-s>", ":CocList -I symbols<cr>", {silent = true})
+
+					-- keyset("n", "<space>p", ":<C-u>CocListResume<cr>", opts)
+
+					vim.g.coc_global_extensions = { "coc-json", "coc-git", "coc-clangd", "coc-html", "coc-calc", "coc-css", "coc-java", "coc-pyright", "coc-rust-analyzer", "coc-sh", "coc-tsserver", "coc-toml", "coc-xml", "coc-lua", "coc-tabnine" }
 
 				end
 	}
